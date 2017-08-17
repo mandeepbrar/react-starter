@@ -18,7 +18,7 @@ module.exports = merge(config, {
     library: "mylib",
     libraryTarget: "umd",
     filename: 'scripts/index.js',
-    path: path.resolve(__dirname, '../dist/'),
+    path: path.resolve(__dirname, '../dev/'),
     publicPath: '/'
   },
   devtool: 'cheap-module-source-map',

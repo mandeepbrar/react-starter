@@ -14,7 +14,6 @@ const GLOBALS = {
 module.exports = merge(config, {
   output: {
     filename: 'scripts/index.js',
-    path: path.resolve(__dirname, '../dist/'),
     publicPath: '/'
   },
   cache: true,

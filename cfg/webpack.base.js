@@ -5,9 +5,6 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
-  externals: {
-    'react':'react'
-  },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
