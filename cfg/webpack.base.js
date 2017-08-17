@@ -5,13 +5,6 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: 'scripts/vendor.bundle.js',
-      minChunks: Infinity
-    })
-  ],
   resolve: {
      modules: [
        path.join(__dirname, '../src'),
