@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=development webpack-dashboard -c cyan -- node server.js",
     "dist": "rimraf dist && cross-env NODE_ENV=production webpack --config ./cfg/webpack.dist.js --progress",
-    "libdev": "cross-env NODE_ENV=production webpack --config ./cfg/webpack.libdev.js --progress",
+    "libdev": "rimraf dev && cross-env NODE_ENV=production webpack --config ./cfg/webpack.libdev.js --progress",
     "lib": "rimraf dist && cross-env NODE_ENV=production webpack --config ./cfg/webpack.lib.js --progress",
     "lint": "eslint ./src"
   },
