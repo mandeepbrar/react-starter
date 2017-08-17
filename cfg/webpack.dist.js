@@ -2,6 +2,7 @@ const merge = require('webpack-merge');
 const config = require('./webpack.disttpl');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(config, {
   output: {
@@ -10,6 +11,9 @@ module.exports = merge(config, {
     publicPath: '/'
   },
   plugins:[
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, '../src/index.tpl.html')
+    }),
     new CopyWebpackPlugin([
       {
         from: path.join(__dirname, '../src/images'),

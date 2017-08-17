@@ -1,7 +1,6 @@
 const merge = require('webpack-merge');
 const config = require('./webpack.disttpl');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(config, {
   output: {
@@ -10,10 +9,5 @@ module.exports = merge(config, {
     filename: 'scripts/index.js',
     path: path.resolve(__dirname, '../dist/'),
     publicPath: '/'
-  },
-  plugins:[
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, '../src/index.tpl.html')
-    })
-  ]
+  }
 });
