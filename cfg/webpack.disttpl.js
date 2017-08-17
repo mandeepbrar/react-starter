@@ -2,7 +2,6 @@ const path = require('path');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config = require('./webpack.base');
 
 const GLOBALS = {
@@ -24,9 +23,6 @@ module.exports = merge(config, {
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin(GLOBALS),
     new webpack.optimize.DedupePlugin(),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, '../src/index.tpl.html')
-    }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false

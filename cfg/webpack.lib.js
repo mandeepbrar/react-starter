@@ -1,6 +1,7 @@
 const merge = require('webpack-merge');
 const config = require('./webpack.disttpl');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(config, {
   output: {
