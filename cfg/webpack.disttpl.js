@@ -2,7 +2,6 @@ const path = require('path');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config = require('./webpack.base');
 
@@ -21,12 +20,6 @@ module.exports = merge(config, {
     ]
   },
   plugins: [
-    new CopyWebpackPlugin([
-      {
-        from: path.join(__dirname, '../src/images'),
-        to: 'images'
-      }
-    ]),
     // Avoid publishing files when compilation fails
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin(GLOBALS),
