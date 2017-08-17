@@ -1,5 +1,6 @@
 const merge = require('webpack-merge');
 const config = require('./webpack.devtpl');
+const path = require('path');
 
 module.exports = merge(config, {
   output: {
