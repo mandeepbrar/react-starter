@@ -9,5 +9,10 @@ module.exports = merge(config, {
     filename: 'scripts/index.js',
     path: path.resolve(__dirname, '../dist/'),
     publicPath: '/'
-  }
+  },
+  plugins:[
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, '../src/index.tpl.html')
+    })
+  ]
 });
