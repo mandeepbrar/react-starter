@@ -4,7 +4,6 @@ const path = require('path');
 
 module.exports = merge(config, {
   output: {
-    library: "mylib",
     libraryTarget: "umd",
     filename: 'scripts/index.js',
     path: path.resolve(__dirname, '../dist/'),
