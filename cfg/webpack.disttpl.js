@@ -22,7 +22,6 @@ module.exports = merge(config, {
     // Avoid publishing files when compilation fails
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin(GLOBALS),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
@@ -51,7 +50,6 @@ module.exports = merge(config, {
           fallback: 'style-loader',
           use: [
             { loader: 'css-loader', query: { sourceMap: true } },
-            'postcss-loader',
             { loader: 'sass-loader', query: { outputStyle: 'compressed' } }
           ]
         })
@@ -62,7 +60,6 @@ module.exports = merge(config, {
           fallback: 'style-loader',
           use: [
             { loader: 'css-loader', query: { sourceMap: true } },
-            'postcss-loader',
             { loader: 'sass-loader', query: { outputStyle: 'compressed' } }
           ]
         })
@@ -71,7 +68,7 @@ module.exports = merge(config, {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'postcss-loader']
+          use: ['css-loader']
         })
       }
     ]
